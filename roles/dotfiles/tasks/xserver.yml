@@ -1,0 +1,3 @@
+---
+- name: xserver | .XResources
+  copy: src=xserver/.Xresources dest=/home/michael/.Xresources

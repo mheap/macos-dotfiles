@@ -1,0 +1,21 @@
+---
+- name: vim | Create vim dirs
+  file: dest={{item}} state=directory
+  with_items:
+    - ~/.vim
+    - ~/.vim/tmp
+    - ~/.vimlocal
+    - ~/.vimlocal/swapfiles
+
+- name: vim | Create vimrc
+  copy: src=vim/.vimrc dest=~/.vimrc
+
+- name: vim | Is Vundle installed?
+  stat: path=~/.vim/bundle/Vundle.vim
+  register: vundle_folder
+
+- name: vim | Vundle
+  git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
+  when: not vundle_folder.stat.exists
+
+

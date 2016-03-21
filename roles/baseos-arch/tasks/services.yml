@@ -1,0 +1,8 @@
+---
+- name: services | Start netctl@wired automatically
+  service: name="netctl@wired.service" state=started
+  become: true
+
+- name: services | Start docker automatically
+  service: name="docker" state=started
+  become: true

@@ -1,0 +1,73 @@
+- name: packages | Install common packages
+  pacman: name={{item}} state=installed
+  with_items:
+    - gnupg
+    - unzip
+    - gvim # This provides vim +huge
+    - openssh
+    - xterm
+    - zip
+    - zsh
+  become: true
+
+- name: packages | Install GUI packages
+  pacman: name={{item}} state=installed
+  with_items:
+    - google-chrome
+    - spotify
+  become: true
+
+- name: packages | Install secret key USB packages
+  pacman: name={{item}} state=installed
+  with_items:
+    - bindfs
+    - devmon
+    - udevil
+    - udisks2
+  become: true
+
+- name: packages | Install developer packages
+  pacman: name={{item}} state=installed
+  with_items:
+    - cmake
+    - git
+    - strace
+  become: true
+
+- name: packages | Install developer helper packages
+  pacman: name={{item}} state=installed
+  with_items:
+    - jq
+    - graphviz
+  become: true
+
+- name: packages | Install virtualization packages
+  pacman: name={{item}} state=installed
+  with_items:
+    - docker
+    - vagrant
+    - virtualbox
+  become: true
+
+- name: packages | Install xmonad
+  pacman: name={{item}} state=installed
+  with_items:
+    - xmonad
+    - xmonad-contrib
+    - xmobar
+    - i3lock
+  become: true
+
+- name: packages | Install AUR packages
+  pacman: name={{item}} state=installed
+  with_items:
+    - lsyncd
+    - jo-git
+    - git-rook
+    - playerctl
+    - silver-searcher-git
+    - slack-desktop
+    - z-git
+  become: true
+  when: false
+

@@ -1,0 +1,4 @@
+- name: projects-go | Download projects
+  git: repo=git@github.com:datasift/{{item}}.git dest=~/development/golang/src/github.com/datasift/{{item}} update=no
+  become: no
+  with_items: "{{datasift_projects_go}}"

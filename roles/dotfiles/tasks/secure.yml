@@ -1,0 +1,8 @@
+---
+- name: Create symlinks
+  file: src=/media/lockbox/private-keys/{{ item.src }} dest={{ item.dest }} state=link owner=michael group=michael mode=0600
+  with_items:
+  - { src: 'ssh', dest: '~/.ssh' }
+  - { src: 'ssh/.ssh-ident', dest: '~/.ssh-ident' }
+  - { src: 'gnupg', dest: '~/.gnupg' }
+  - { src: 'chef', dest: '~/.chef' }

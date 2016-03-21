@@ -1,0 +1,15 @@
+---
+- include: setup.yml
+  tags: [user, dotfiles, setup]
+- include: binaries.yml
+  tags: [user, dotfiles, binaries]
+- include: xserver.yml
+  tags: [user, dotfiles, xserver]
+- include: vim.yml
+  tags: [user, dotfiles, bim]
+- include: xmonad.yml
+  tags: [user, dotfiles, xmonad]
+- include: zsh.yml
+  tags: [user, dotfiles, zsh]
+- include: secure.yml
+  tags: [user, dotfiles, secure]

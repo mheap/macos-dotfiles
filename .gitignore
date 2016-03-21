@@ -1,0 +1,4 @@
+.peru
+*.retry
+roles/*/defaults/*.yml
+roles/dotfiles/files/zsh/plugins/

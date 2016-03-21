@@ -1,0 +1,10 @@
+Description={{item.description}}
+Interface={{item.interface}}
+Connection={{item.connection}}
+IP={{item.ip}}
+Priority={{item.priority}}
+{% if item.connection == 'wireless' %}
+Security={{item.security}}
+ESSID={{item.essid}}
+Key={{item.key}}
+{% endif %}

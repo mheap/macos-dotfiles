@@ -1,0 +1,29 @@
+- name: networking | Install wifi packages
+  pacman: name={{item}} state=installed
+  with_items:
+    - ifplugd
+    - wpa_actiond
+    - vpnc
+  become: true
+
+- name: networking | Install AUR packages
+  pacman: name={{item}} state=installed
+  with_items:
+    - netctl-vpnc
+  become: true
+  when: false
+
+- name: networking | Create netctl profiles (Networks)
+  template: src=netctl/profile.j2 dest=/etc/netctl/{{item.name}}
+  become: true
+  with_items: "{{networks}}"
+
+- name: networking | Create vpnc profiles (VPN)
+  template: src=vpnc/conf.j2 dest=/etc/vpnc/{{item.name}}.conf
+  become: true
+  with_items: "{{vpn}}"
+
+- name: networking | Create netctl profiles (VPN)
+  template: src=netctl/vpn_profile.j2 dest=/etc/netctl/{{item.name}}
+  become: true
+  with_items: "{{vpn}}"

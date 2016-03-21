@@ -1,0 +1,11 @@
+---
+- name: zsh | Install .zshrc
+  copy: src=zsh/.zshrc dest=~/.zshrc
+
+- name: zsh | Copy zsh includes folder to .local
+  copy: src=zsh/includes/ dest=~/.local/zsh/includes/
+
+- name: zsh | Copy zsh plugins folder to .local
+  copy: src=zsh/plugins/ dest=~/.local/zsh/plugins/
+
+

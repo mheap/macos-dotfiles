@@ -1,0 +1,11 @@
+---
+- name: dotfiles | setup | Create ~/.local
+  file: path=~/.local state=directory
+
+- name: dotfiles | setup | Create development dirs
+  file: path={{item}} state=directory
+  with_items:
+    - ~/development/datasift
+    - ~/development/oss
+    - ~/development/ds-cookbooks
+

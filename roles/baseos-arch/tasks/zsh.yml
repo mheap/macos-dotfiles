@@ -1,0 +1,10 @@
+- name: zsh | Install ZSH
+  pacman: name={{item}} state=installed
+  with_items:
+    - zsh
+  become: true
+
+- name: zsh | Change shell
+  user: name=michael shell=/bin/zsh
+  become: true
+

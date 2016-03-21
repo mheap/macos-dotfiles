@@ -1,0 +1,5 @@
+---
+- name: lang-mysql | Install MariaDB
+  pacman: name={{item}} state=installed
+  with_items:
+    - mariadb

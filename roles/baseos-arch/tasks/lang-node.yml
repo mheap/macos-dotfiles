@@ -1,0 +1,6 @@
+---
+- name: lang-node | Install Node
+  pacman: name={{item}} state=installed
+  with_items:
+    - nodejs
+    - npm

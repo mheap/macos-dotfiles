@@ -1,0 +1,4 @@
+- name: config | Set GB Keyboard
+  shell: localectl set-x11-keymap gb
+  become: true
+

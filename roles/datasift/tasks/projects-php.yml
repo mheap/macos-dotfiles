@@ -1,0 +1,4 @@
+- name: projects-php | Download projects
+  git: repo=git@github.com:datasift/{{item}}.git dest=~/development/datasift/{{item}} update=no
+  become: no
+  with_items: "{{datasift_projects_php}}"

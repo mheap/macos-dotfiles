@@ -1,0 +1,6 @@
+---
+- include: projects-php.yml
+  tags: [datasift, dsphp]
+
+- include: projects-go.yml
+  tags: [datasift, dsgo]

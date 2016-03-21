@@ -1,0 +1,51 @@
+---
+# NOTE: You'll need to install yaourt by hand to install things from
+# AUR
+
+- include: config.yml
+  tags: [system, config]
+
+- include: services.yml
+  tags: [system, services]
+
+- include: drivers.yml
+  tags: [system, drivers]
+
+- include: lightdm.yml
+  tags: [system, lightdm]
+
+- include: modprobe.yml
+  tags: [system, modprobe]
+
+- include: packages.yml
+  tags: [system, packages]
+
+- include: networking.yml
+  tags: [system, networking]
+
+- include: xserver.yml
+  tags: [system, xserver]
+
+- include: zsh.yml
+  tags: [system, zsh]
+
+- include: lang-php.yml
+  tags: [lang, development, php]
+
+- include: lang-node.yml
+  tags: [lang, development, node]
+
+- include: lang-go.yml
+  tags: [lang, development, go]
+
+- include: lang-python.yml
+  tags: [lang, development, python]
+
+- include: lang-mysql.yml
+  tags: [lang, development, mysql]
+
+- include: tool-chefdk.yml
+  tags: [configman, development, chef]
+
+- include: tool-ansible.yml
+  tags: [configman, development, ansible]
