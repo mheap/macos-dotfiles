@@ -55,7 +55,7 @@ selectMusic     = selectSpotify
 selectTerminal  = selectXTerm
 
 -- Window Selectors (Specific)
-selectSpotify, selectXTerm, selectSteamFriends :: Property
+selectSpotify, selectXTerm :: Property
 selectSpotify      = ClassName "Spotify" `Or` ClassName "spotify"
 selectXTerm        = ClassName "xxterm" `Or` ClassName "UXTerm"
 selectIrssi        = selectTerminal `And` Title "irssi"
@@ -136,7 +136,7 @@ myBindings =
     , ("M-S-q"          , kill)
     , ("M-S-<Space>"    , promote)
     , ("C-M1-q"         , io (exitWith ExitSuccess)) -- Ctrl + Alt + q = Quit xmonad
-    , ("C-S-l"          , spawn "dm-tool lock") -- Ctrl + Alt + L = Lock screen
+    , ("C-S-l"          , spawn "i3lock -c 111111") -- Ctrl + Alt + L = Lock screen
     , ("M-p"            , spawn "dmenu_run")
     , ("M-,"            , sendMessage (IncMasterN 1))
     , ("M-."            , sendMessage (IncMasterN (-1)))
