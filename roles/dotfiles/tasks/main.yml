@@ -1,14 +1,22 @@
 ---
+- include_vars: os_vars/linux.yml
+  when: is_linux
+
+- include_vars: os_vars/osx.yml
+  when: is_osx
+
 - include: setup.yml
   tags: [user, dotfiles, setup]
 - include: binaries.yml
   tags: [user, dotfiles, binaries]
 - include: xserver.yml
   tags: [user, dotfiles, xserver]
+  when: is_linux
 - include: vim.yml
   tags: [user, dotfiles, bim]
 - include: xmonad.yml
   tags: [user, dotfiles, xmonad]
+  when: is_linux
 - include: zsh.yml
   tags: [user, dotfiles, zsh]
 - include: secure.yml

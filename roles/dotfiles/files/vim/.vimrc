@@ -17,6 +17,9 @@ Plugin 'airblade/vim-rooter'
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 
 
 
@@ -292,8 +295,8 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_show_hidden = 1
 
-" The Silver Searcher
-" taken from: http://robots.thoughtbot.com/faster-grepping-in-vim/
+""" The Silver Searcher
+""" taken from: http://robots.thoughtbot.com/faster-grepping-in-vim/
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -308,6 +311,6 @@ if executable('ag')
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 
+"" Powerline
 let $PYTHONPATH="/usr/lib/python3.5/site-packages"
 let g:Powerline_symbols = 'fancy'
-

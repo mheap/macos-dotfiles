@@ -1,7 +1,16 @@
 ---
 - hosts: all
   gather_facts: False
+  vars:
+    is_linux: False
+    is_arch: False
+    is_osx: True
+
   roles:
-    - baseos-arch
-    - dotfiles
-    - datasift
+    - role: baseos-arch
+      when: is_arch
+    - role: baseos-osx
+      when: is_osx
+    - role: dotfiles
+    - role: datasift
+      when: is_linux

@@ -1,3 +1,11 @@
+# GLS comes from `brew install coreutils`
+if $(gls &>/dev/null); then
+ LS_COM="gls"
+else
+ LS_COM="ls"
+fi
+
+
 # Running Dotfiles
 alias ansible-run='ansible-playbook -i ~/.playbooks/inventory.conf -c local $@ ~/.playbooks/site.yml --ask-vault-pass'
 alias ansible-sudo='ansible-run -K'
@@ -6,18 +14,25 @@ alias ansible-dotfiles='ansible-run --tags=dotfiles'
 alias ansible-vim='ansible-run --tags=vim'
 
 # Mounting/unmounting secure
+SRC_DIR=/media
+MOUNT_DIR=/media
+USE_SUDO=""
+if [[ "`uname`" == "Darwin" ]]; then
+SRC_DIR=/Volumes
+MOUNT_DIR=/Users/michael
+fi
 
 lock() {
-    sudo umount /media/lockbox && echo "Locked"
+    sudo umount $MOUNT_DIR/lockbox && echo "Locked"
 }
 
 unlock() {
-    bindfs -n -p 0700 -u $(id -u) -g $(id -g) /media/DATASHUR /media/lockbox
+    bindfs -n -p 0700 -u $(id -u) -g $(id -g) $SRC_DIR/DATASHUR $MOUNT_DIR/lockbox
     echo "Unlocked"
 }
 
 # Default options
-alias ls='ls --color'
+alias ls='$LS_COM --color'
 
 # Other useful aliases
 alias open='xdg-open'
