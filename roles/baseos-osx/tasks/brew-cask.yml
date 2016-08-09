@@ -1,0 +1,29 @@
+- name: Install system homebrew casks
+  homebrew_cask: name="{{item}}" state=present
+  with_items:
+    - osxfuse
+
+- name: Install development homebrew casks
+  homebrew_cask: name="{{item}}" state=present
+  with_items:
+    - chefdk
+    - iterm2
+    - vagrant
+    - virtualbox
+
+- name: Install user homebrew casks
+  homebrew_cask: name="{{item}}" state=present
+  with_items:
+    - 1password
+    - alfred
+    - beamer
+    - calibre
+    - dropbox
+    - fantastical
+    - google-chrome
+    #- screenflow # Disabled, version too new
+    - slack
+    - spotify
+    - utorrent
+    - vlc
+    - ynab
