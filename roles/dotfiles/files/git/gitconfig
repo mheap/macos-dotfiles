@@ -1,0 +1,34 @@
+
+[user]
+    name = Michael Heap
+    email = m@michaelheap.com
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[alias]
+    lprune = !git branch --merged master | grep -v -E '(master|develop)$' | xargs git branch -d
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+    pager = less -r
+[apply]
+    whitespace = nowarn
+[mergetool]
+    keepBackup = false
+[difftool]
+    prompt = false
+[help]
+    autocorrect = 1
+[push]
+    default = current
+[commit]
+    gpgsign = true
+
+[url "git@github.com:/"]
+  insteadOf = "git://github.com/"
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+

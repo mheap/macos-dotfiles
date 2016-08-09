@@ -50,6 +50,10 @@ v(){
     fi
 }
 
+vp() {
+    v production
+}
+
 vs() {
     v staging
 }

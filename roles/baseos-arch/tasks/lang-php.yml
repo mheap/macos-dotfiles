@@ -8,3 +8,4 @@
     - php-mcrypt
     - php-pear
     - php-sqlite
+    - php-memcached

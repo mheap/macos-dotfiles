@@ -14,6 +14,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-rooter'
+Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'chase/vim-ansible-yaml'
