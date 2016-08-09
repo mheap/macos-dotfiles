@@ -13,7 +13,7 @@
   tags: [user, dotfiles, xserver]
   when: is_linux
 - include: vim.yml
-  tags: [user, dotfiles, bim]
+  tags: [user, dotfiles, vim]
 - include: xmonad.yml
   tags: [user, dotfiles, xmonad]
   when: is_linux
