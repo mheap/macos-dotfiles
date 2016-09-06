@@ -11,8 +11,8 @@
     #wireless_device: wlp2s0 # Office
 
   roles:
-      - role: baseos-arch
-        when: is_arch
-      # - role: baseos-osx
-      # - when: is_osx
-      - role: dotfiles
+    - role: baseos-arch
+      when: is_arch
+    - role: baseos-osx
+      when: is_osx
+    - role: dotfiles
