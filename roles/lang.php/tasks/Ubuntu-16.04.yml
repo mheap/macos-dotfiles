@@ -1,0 +1,8 @@
+- name: Install PHP
+  apt: name={{item}} state=latest
+  with_items:
+    - php
+    - php-fpm
+    - php-mysql
+    - php-xml
+  become: true

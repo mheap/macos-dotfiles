@@ -1,0 +1,5 @@
+- name: Install nginx
+  apt: name={{item}} state=latest
+  with_items:
+    - nginx
+  become: true

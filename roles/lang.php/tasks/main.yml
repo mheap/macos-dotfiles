@@ -1,0 +1,14 @@
+---
+# tasks file for lang.php
+- include: "{{ansible_distribution}}-{{ansible_distribution_version}}.yml"
+
+- name: Is nginx installed?
+  stat: path=/etc/nginx/sites-enabled
+  register: nginx_installed
+
+- name: Set up PHP Upstream for nginx
+  copy: src=nginx/php-upstream dest=/etc/nginx/sites-enabled/000-php-upstream
+  become: true
+  when: nginx_installed.stat.exists
+  notify: restart nginx
+

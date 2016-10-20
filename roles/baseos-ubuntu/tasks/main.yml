@@ -1,0 +1,7 @@
+---
+# tasks file for baseos-ubuntu
+- name: Install required utilities
+  apt: name={{item}} state=installed
+  with_items:
+    - zip
+  become: true

@@ -1,0 +1,14 @@
+---
+# tasks file for service.nginx
+- include: "{{ansible_distribution}}-{{ansible_distribution_version}}.yml"
+
+- name: Make sure global includes folder exists
+  file: path=/etc/nginx/conf.d/global state=directory
+  become: true
+
+- name: Copy nginx config files to conf.d
+  copy: src=conf.d/{{item}} dest=/etc/nginx/conf.d/global/{{item}}
+  with_items:
+    - restrictions.conf
+  become: true
+  notify: restart nginx
