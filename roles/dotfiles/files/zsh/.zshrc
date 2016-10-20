@@ -9,7 +9,7 @@ source "$HOME/.local/zsh/includes/prompt.zsh"
 source "$HOME/.local/zsh/includes/syntax-highlighting.zsh"
 
 source "$HOME/.local/zsh/plugins/history-substring-search/zsh-history-substring-search.zsh"
-source "/usr/lib/z.sh"
+source "/usr/share/z/z.sh"
 
 
 if [ -x /usr/bin/dircolors ]; then

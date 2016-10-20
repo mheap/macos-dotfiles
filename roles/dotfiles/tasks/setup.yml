@@ -5,7 +5,6 @@
 - name: dotfiles | setup | Create development dirs
   file: path={{item}} state=directory
   with_items:
-    - ~/development/datasift
     - ~/development/oss
-    - ~/development/ds-cookbooks
-
+    - ~/development/digime
+    - ~/development/digime-cookbooks

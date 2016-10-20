@@ -7,4 +7,7 @@ Priority={{item.priority}}
 Security={{item.security}}
 ESSID={{item.essid}}
 Key={{item.key}}
+{% if item.hidden|default(false) == true %}
+Hidden=yes
+{% endif %}
 {% endif %}

@@ -12,5 +12,3 @@
     - role: baseos-osx
       when: is_osx
     - role: dotfiles
-    - role: datasift
-      when: is_linux

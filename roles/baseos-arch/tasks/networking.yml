@@ -11,7 +11,6 @@
   with_items:
     - netctl-vpnc
   become: true
-  when: false
 
 - name: networking | Create netctl profiles (Networks)
   template: src=netctl/profile.j2 dest=/etc/netctl/{{item.name}}

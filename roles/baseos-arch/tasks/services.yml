@@ -2,7 +2,12 @@
 - name: services | Start netctl@wired automatically
   service: name="netctl@wired.service" state=started
   become: true
+  when: False
+
+- name: services | Start netctl-auto@wlp2s0 automatically
+  service: name="netctl-auto@wlp2s0.service" state=started enabled=yes
+  become: true
 
 - name: services | Start docker automatically
-  service: name="docker" state=started
+  service: name="docker.service" state=started enabled=yes
   become: true

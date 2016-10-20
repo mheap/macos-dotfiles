@@ -23,3 +23,18 @@ run `peru sync`
 All variables are provided via `rolename/defaults/main.yml`. These files are
 GPG encrypted as well as using `ansible-vault`. Run `./bin/decrypt-defaults` to
 decrypt them
+
+
+# OS Specific requirements
+
+### Arch Linux
+
+* Install yaourt
+* yaourt -S powerline-fonts-git
+
+### yaourt packages
+
+* powerline-fonts-git
+* google-chrome
+* libu2f-host
+* slack-desktop

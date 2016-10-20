@@ -4,8 +4,8 @@ setopt RM_STAR_WAIT         # Force the user to wait before `rm *`
 # Named directories
 setopt AUTO_NAME_DIRS
 export oss="$HOME/development/oss"
-export datasift="$HOME/development/datasift"
-export cookbooks="$HOME/development/ds-cookbooks"
+export digi="$HOME/development/digime"
+export cookbooks="$HOME/development/digime-cookbooks"
 
 # Paths
 # Add directories to $PATH if they exist
