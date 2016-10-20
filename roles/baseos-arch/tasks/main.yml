@@ -20,6 +20,9 @@
 - include: networking.yml
   tags: [system, networking]
 
+- include: systemctl-user.yml
+  tags: [system, systemctl]
+
 - include: services.yml
   tags: [system, services]
 

@@ -8,6 +8,12 @@
   service: name="netctl-auto@wlp2s0.service" state=started enabled=yes
   become: true
 
+- name: services | Start user services
+  systemd: name="{{item}}.service" state=started enabled=yes user=yes
+  with_items:
+    - ssh-agent
+    - devmon
+
 - name: services | Start docker automatically
   service: name="docker.service" state=started enabled=yes
   become: true
