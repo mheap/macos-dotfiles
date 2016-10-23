@@ -8,3 +8,6 @@
     - ~/development/oss
     - ~/development/digime
     - ~/development/digime-cookbooks
+
+- name: dotfiles | Create ~/.local/bin
+  file: path=~/.local/bin state=directory

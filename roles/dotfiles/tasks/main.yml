@@ -7,8 +7,8 @@
 
 - include: setup.yml
   tags: [user, dotfiles, setup]
-- include: binaries.yml
-  tags: [user, dotfiles, binaries]
+- include: git.yml
+  tags: [user, dotfiles, git]
 - include: xserver.yml
   tags: [user, dotfiles, xserver]
   when: is_linux

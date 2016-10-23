@@ -1,3 +1,0 @@
----
-- name: binaries | Create ~/.local/bin
-  file: path=~/.local/bin state=directory
