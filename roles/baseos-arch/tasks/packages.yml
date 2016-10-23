@@ -4,6 +4,7 @@
     - gnupg
     - unzip
     - openssh
+    - wget
     - xterm
     - zip
     - zsh
@@ -15,12 +16,13 @@
     - google-chrome
     - spotify
     - slack-desktop
+    - typora
 
 - name: packages | Install AUR CLI packages
   yaourt: name={{item}} state=present
   with_items:
     - z-git
-
+    - dropbox-cli
 
 - name: packages | Install AUR system packages
   yaourt: name={{item}} state=present
