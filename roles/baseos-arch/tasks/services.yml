@@ -4,12 +4,12 @@
   become: true
   when: False
 
-- name: services | Start netctl-auto@wlp2s0 automatically
-  service: name="netctl-auto@wlp2s0.service" state=started enabled=yes
+- name: services | Start netctl-auto@{{wireless_device}} automatically
+  service: name="netctl-auto@{{wireless_device}}.service" state=started enabled=yes
   become: true
 
 - name: services | Start user services
-  systemd: name="{{item}}.service" state=started enabled=yes user=yes
+  systemd: name="{{item}}.service" state=started enabled=yes user=yes daemon_reload=yes
   with_items:
     - ssh-agent
     - devmon

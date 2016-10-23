@@ -2,13 +2,17 @@
 - hosts: all
   gather_facts: False
   vars:
-    is_linux: False
-    is_arch: False
-    is_osx: True
+    is_linux: True
+    is_arch: True
+    is_osx: False
+    is_digime_laptop: False
+
+    wireless_device: wlp0s20f0u10 # Home
+    #wireless_device: wlp2s0 # Office
 
   roles:
-    - role: baseos-arch
-      when: is_arch
-    - role: baseos-osx
-      when: is_osx
-    - role: dotfiles
+      - role: baseos-arch
+        when: is_arch
+      # - role: baseos-osx
+      # - when: is_osx
+      - role: dotfiles

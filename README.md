@@ -1,6 +1,6 @@
 # Dotfiles
 
-These are my current dotfiles. You need Ansible 2 to install them.
+These are my current dotfiles. You need Ansible >= 2.3 to install them.
 
 For the first run, you'll need to use ansible-playbook
 
@@ -29,12 +29,16 @@ decrypt them
 
 ### Arch Linux
 
-* Install yaourt
-* yaourt -S powerline-fonts-git
-
-### yaourt packages
-
-* powerline-fonts-git
-* google-chrome
-* libu2f-host
-* slack-desktop
+```
+cd .playbooks
+./bin/decrypt-defaults
+sudo pacman -S python2 git openssh binutils gcc pkg-config make fakeroot python2
+git clone https://aur.archlinux.org/package-query.git
+git clone https://aur.archlinux.org/yaourt.git
+cd package-query && makepkg -si && cd ..
+cd yaourt && makepkg -si && cd ..
+yaourt -S ansible-git
+sudo pip install peru
+peru sync
+ansible-playbook -i inventory.conf -c local site.yml --ask-vault-pass --ask-become-pass
+```

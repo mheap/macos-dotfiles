@@ -9,11 +9,25 @@
     - zsh
   become: true
 
-- name: packages | Install GUI packages
+- name: packages | Install AUR GUI packages
   yaourt: name={{item}} state=present
   with_items:
     - google-chrome
     - spotify
+    - slack-desktop
+
+- name: packages | Install AUR CLI packages
+  yaourt: name={{item}} state=present
+  with_items:
+    - z-git
+
+
+- name: packages | Install AUR system packages
+  yaourt: name={{item}} state=present
+  with_items:
+    - libu2f-host
+    - powerline-fonts-git
+
 
 - name: packages | Install secret key USB packages
   pacman: name={{item}} state=installed
@@ -58,6 +72,7 @@
     - xmonad-contrib
     - xmobar
     - i3lock
+    - dmenu
   become: true
 
 - name: packages | Install AUR packages

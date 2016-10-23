@@ -5,4 +5,7 @@
     - lightdm-gtk-greeter
   become: true
 
+- name: lightdm | Enable LightDM
+  systemd: name=lightdm enabled=true
+
 
