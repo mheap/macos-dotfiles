@@ -18,11 +18,36 @@ function git_branch {
     fi
 }
 
+function _info_knife() {
+    knife_info_msg_=""
+
+    local ENVIRONMENT_FILE ENVIRONMENT COLOUR
+
+    [[ ! -L "$HOME/.chef/knife.rb" ]] && return
+
+    ENVIRONMENT_FILE=$(realpath "$HOME/.chef/knife.rb")
+    ENVIRONMENT=$(basename $ENVIRONMENT_FILE | sed "s/knife-\(.*\).rb/\1/")
+    COLOUR="$fg_bold[green]"
+
+    # When the environment is `none`, skip showing knife information
+    [[ "$ENVIRONMENT" == "none" ]] && return
+
+    # Set colors based on the environment
+    [[ "$ENVIRONMENT" == "production"  ]] && COLOUR="$fg[red]"
+    [[ "$ENVIRONMENT" == "staging"     ]] && COLOUR="$fg[yellow]"
+    [[ "$ENVIRONMENT" == "development" ]] && COLOUR="$fg[green]"
+    [[ "$ENVIRONMENT" == "berksapi"    ]] && COLOUR="$fg[blue]"
+
+    ENVIRONMENT="%{$COLOUR%}${ENVIRONMENT}%{$reset_color%}"
+    knife_info_msg_="%{$reset_color%}(%{$fg_bold[green]%}knife:%{$reset_color%}${ENVIRONMENT}) "
+}
+
 function precmd() {
     NAME=""
     if [[ $(whoami) != "michael" ]]; then; NAME="%n%{$reset_color%}@"; fi;
 
-    PROMPT="%{$fg[red]%}$NAME%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}% 
+    _info_knife
+    PROMPT="%{$fg[red]%}$NAME%{$fg[green]%}%m ${knife_info_msg_}%{$fg[yellow]%}%~ %{$reset_color%}% 
 $(prompt_char) "
     RPROMPT="$(git_branch)%{$reset_color%}%"
 }
