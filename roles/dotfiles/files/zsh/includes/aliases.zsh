@@ -7,8 +7,9 @@ fi
 
 
 # Running Dotfiles
-alias ansible-run='ansible-playbook -i ~/.playbooks/inventory.conf -c local $@ ~/.playbooks/site.yml --ask-vault-pass'
+alias ansible-run='ansible-playbook -c local $@ --ask-vault-pass'
 alias ansible-sudo='ansible-run -K'
+alias ansible-arch='ansible-sudo -i ~/.playbooks/inventory/arch-local $@ ~/.playbooks/playbook-desktop.yml'
 alias ansible-system='ansible-sudo --tags=dotfiles'
 alias ansible-dotfiles='ansible-run --tags=dotfiles'
 alias ansible-vim='ansible-run --tags=vim'

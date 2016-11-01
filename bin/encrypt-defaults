@@ -1,6 +1,0 @@
-VARS_FILES=$(find . -wholename "**/defaults/*.yml")
-
-for i in $VARS_FILES; do
-    echo "Encrypting: $i"
-    gpg --output $i.gpg --encrypt --recipient m@michaelheap.com $i
-done

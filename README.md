@@ -13,6 +13,7 @@ After the initial run, helper methods will be available:
 ```bash
 ansible-run # Run as the current user
 ansible-sudo # Run, asking for sudo password
+ansible-arch # Run on a local Arch machine
 ```
 
 ### Peru
@@ -21,7 +22,7 @@ run `peru sync`
 
 ### Variables
 All variables are provided via `rolename/defaults/main.yml`. These files are
-GPG encrypted as well as using `ansible-vault`. Run `./bin/decrypt-defaults` to
+GPG encrypted as well as using `ansible-vault`. Run `./bin/decrypt` to
 decrypt them
 
 
@@ -40,5 +41,5 @@ cd yaourt && makepkg -si && cd ..
 yaourt -S ansible-git
 sudo pip install peru
 peru sync
-ansible-playbook -i inventory.conf -c local site.yml --ask-vault-pass --ask-become-pass
+ansible-playbook -i inventory/arch-local -c local site.yml --ask-vault-pass --ask-become-pass
 ```

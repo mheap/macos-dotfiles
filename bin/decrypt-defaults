@@ -1,6 +1,0 @@
-VARS_FILES=$(find . -wholename "**/defaults/*.yml.gpg")
-
-for i in $VARS_FILES; do
-    echo "Decrypting: $i"
-    gpg --output ${i%.gpg} --decrypt $i
-done

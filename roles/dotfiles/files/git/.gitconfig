@@ -26,3 +26,7 @@
 
 [url "git@github.com:mheap/"]
   insteadOf = "git://github.com/mheap/"
+
+[remote "origin"]
+  fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+
