@@ -1,0 +1,16 @@
+---
+- name: Install PHP
+  pacman: name={{item}} state=latest
+  with_items:
+    - php
+    - composer
+  become: true
+
+- name: Enable extensions
+  replace: dest=/etc/php/php.ini regexp=^;extension={{item}}.so replace=extension={{item}}.so
+  with_items:
+    - curl
+    - zip
+    - pdo_mysql
+  become: true
+
