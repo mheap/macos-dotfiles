@@ -31,13 +31,10 @@
     - libu2f-host
     - powerline-fonts-git
 
-
 - name: packages | Install secret key USB packages
   pacman: name={{item}} state=installed
   with_items:
-    - devmon
     - udevil
-    - udisks2
   become: true
 
 - name: packages | Install AUR secret key USB packages
@@ -51,6 +48,7 @@
     - cmake
     - git
     - strace
+    - rsync
   become: true
 
 - name: packages | Install developer helper packages
@@ -66,6 +64,7 @@
     - docker
     - vagrant
     - virtualbox
+    - linux-headers # For Virtualbox
   become: true
 
 - name: packages | Install xmonad
