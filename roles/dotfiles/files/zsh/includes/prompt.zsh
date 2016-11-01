@@ -36,6 +36,7 @@ function _info_knife() {
     [[ "$ENVIRONMENT" == "production"  ]] && COLOUR="$fg[red]"
     [[ "$ENVIRONMENT" == "staging"     ]] && COLOUR="$fg[yellow]"
     [[ "$ENVIRONMENT" == "development" ]] && COLOUR="$fg[green]"
+    [[ "$ENVIRONMENT" == "automation"    ]] && COLOUR="$fg[magenta]"
     [[ "$ENVIRONMENT" == "berksapi"    ]] && COLOUR="$fg[blue]"
 
     ENVIRONMENT="%{$COLOUR%}${ENVIRONMENT}%{$reset_color%}"

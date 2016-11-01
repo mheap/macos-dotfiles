@@ -61,3 +61,7 @@ vs() {
 vo() {
     v openstack
 }
+
+ts-mocha() {
+rm -rf coverage && node_modules/.bin/ts-node ./node_modules/istanbul/lib/cli.js cover -ext .ts node_modules/mocha/bin/_mocha "$@"
+}

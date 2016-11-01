@@ -4,6 +4,7 @@
     - gnupg
     - unzip
     - openssh
+    - rsync
     - wget
     - xterm
     - zip

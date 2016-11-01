@@ -16,6 +16,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-rooter'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'HerringtonDarkholme/yats.vim'
 
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'SirVer/ultisnips'
