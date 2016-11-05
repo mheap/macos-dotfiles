@@ -1,5 +1,7 @@
-- include: brew-cask.yml
-  tags: [osx, brew, brewcask]
 - include: brew.yml
   tags: [osx, brew]
+- include: brew-cask.yml
+  tags: [osx, brew, brewcask]
+- include: mas.yml
+  tags: [osx, mas]
 

@@ -43,3 +43,19 @@ sudo pip install peru
 peru sync
 ansible-playbook -i inventory/arch-local -c local site.yml --ask-vault-pass --ask-become-pass
 ```
+
+### OSX
+
+Install OSXFuse - https://github.com/osxfuse/osxfuse/releases
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install gpg ansible python3
+pip3 intall peru
+peru sync
+ansible-playbook -i inventory/osx-local -c local playbook-osx.yml --ask-vault-pass --ask-become-pass
+```
+
+Fix ntfs mounting (see https://gist.github.com/Coeur/86a18b646a3b78930cf3)
+
+

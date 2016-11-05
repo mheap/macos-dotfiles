@@ -9,7 +9,11 @@ source "$HOME/.local/zsh/includes/prompt.zsh"
 source "$HOME/.local/zsh/includes/syntax-highlighting.zsh"
 
 source "$HOME/.local/zsh/plugins/history-substring-search/zsh-history-substring-search.zsh"
+{% if is_osx %}
+source "/usr/local/etc/profile.d/z.sh"
+{% else %}
 source "/usr/lib/z.sh"
+{% endif %}
 
 
 if [ -x /usr/bin/dircolors ]; then

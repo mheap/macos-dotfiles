@@ -1,6 +1,6 @@
 ---
 - name: zsh | Install .zshrc
-  copy: src=zsh/.zshrc dest=~/.zshrc
+  template: src=zsh/.zshrc dest=~/.zshrc
 
 - name: zsh | Create ZSH folder
   file: dest=~/.local/zsh/includes/ state=directory

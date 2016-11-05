@@ -1,13 +1,13 @@
 - name: Install system homebrew packages
   homebrew: name="{{item}}" state=present
   with_items:
-    - ntfs-3g
+    - homebrew/fuse/ntfs-3g
 
 - name: Install development homebrew packages
-  homebrew: name="{{item}}" state=present
+  homebrew_cask: name="{{item}}" state=present
   with_items:
     - docker
-    - docker-machine
+    #- docker-machine
 
 - name: Install homebrew packages
   homebrew: name="{{item}}" state=present

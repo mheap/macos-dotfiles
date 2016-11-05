@@ -1,8 +1,3 @@
-- name: Install system homebrew casks
-  homebrew_cask: name="{{item}}" state=present
-  with_items:
-    - osxfuse
-
 - name: Install development homebrew casks
   homebrew_cask: name="{{item}}" state=present
   with_items:
@@ -19,11 +14,12 @@
     - beamer
     - calibre
     - dropbox
-    - fantastical
+    #- fantastical
     - google-chrome
     #- screenflow # Disabled, version too new
     - slack
     - spotify
+    - steam
     - utorrent
     - vlc
     - ynab
