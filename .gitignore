@@ -4,3 +4,4 @@ roles/*/defaults/*.yml
 roles/dotfiles/files/zsh/plugins/
 inventory
 playbook-*.yml
+iterm2-colors-solarized

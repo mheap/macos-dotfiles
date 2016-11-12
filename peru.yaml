@@ -4,6 +4,8 @@ imports:
   zsh-syntax-highlighting: 'roles/dotfiles/files/zsh/plugins/syntax-highlighting'
   zsh-history-substring-search: 'roles/dotfiles/files/zsh/plugins/history-substring-search'
 
+  iterm2-solarized: '.'
+
 git module dircolors:
   url: https://github.com/seebi/dircolors-solarized
   pick: dircolors.ansi-dark
@@ -28,3 +30,9 @@ git module zsh-history-substring-search:
   url: https://github.com/zsh-users/zsh-history-substring-search.git
   pick:
     - zsh-history-substring-search.zsh
+
+# iTerm2 Colours
+git module iterm2-solarized:
+  url: https://github.com/altercation/solarized.git
+  pick:
+    - iterm2-colors-solarized/Solarized Dark.itermcolors
