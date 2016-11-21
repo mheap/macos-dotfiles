@@ -12,7 +12,7 @@ export cookbooks="$HOME/development/digime-cookbooks"
 function add_to_path() { [[ -d $1 ]] && export PATH="$1:$PATH"; }
 
 add_to_path "$HOME/development/golang/bin"
-add_to_path "$HOME/.gem/ruby/2.2.0/bin"
+add_to_path "$HOME/.gem/ruby/2.3.0/bin"
 add_to_path "$HOME/.composer/vendor/bin"
 add_to_path "$HOME/.local/bin"
 add_to_path "$HOME/bin"
