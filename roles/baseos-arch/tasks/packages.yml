@@ -24,6 +24,7 @@
   with_items:
     - z-git
     - dropbox-cli
+    - thyme-git
 
 - name: packages | Install AUR system packages
   yaourt: name={{item}} state=present
