@@ -19,6 +19,7 @@ Plugin 'airblade/vim-rooter'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'hashivim/vim-terraform'
 
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'SirVer/ultisnips'

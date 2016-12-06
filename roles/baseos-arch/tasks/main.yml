@@ -26,6 +26,9 @@
 - include: services.yml
   tags: [system, services]
 
+- include: screenshots.yml
+  tags: [system, screenshots]
+
 - include: xserver.yml
   tags: [system, xserver]
 
