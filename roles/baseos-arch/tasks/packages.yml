@@ -63,6 +63,7 @@
   pacman: name={{item}} state=installed
   with_items:
     - docker
+    - docker-compose
     - vagrant
     - virtualbox
     - linux-headers # For Virtualbox
