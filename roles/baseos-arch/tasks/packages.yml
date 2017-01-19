@@ -46,6 +46,8 @@
 - name: packages | Install developer packages
   pacman: name={{item}} state=installed
   with_items:
+    - autoconf
+    - automake
     - cmake
     - git
     - strace
