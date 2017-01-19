@@ -9,7 +9,7 @@
     - xorg-xrdb
     - arandr
     - wmctrl
-    - xorg-wininfo
+    - xorg-xwininfo
     - xdotool
   become: true
 

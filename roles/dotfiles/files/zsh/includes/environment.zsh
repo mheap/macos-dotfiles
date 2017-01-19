@@ -6,6 +6,7 @@ setopt AUTO_NAME_DIRS
 export oss="$HOME/development/oss"
 export digi="$HOME/development/digime"
 export cookbooks="$HOME/development/digime-cookbooks"
+export projects="$HOME/development/projects"
 
 # Paths
 # Add directories to $PATH if they exist
