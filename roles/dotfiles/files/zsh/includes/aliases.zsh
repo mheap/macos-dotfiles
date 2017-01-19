@@ -63,6 +63,10 @@ vo() {
     v openstack
 }
 
+myip() {
+    dig +short myip.opendns.com @resolver1.opendns.com
+}
+
 ts-mocha() {
 rm -rf coverage && node_modules/.bin/ts-node ./node_modules/istanbul/lib/cli.js cover -ext .ts node_modules/mocha/bin/_mocha "$@"
 }

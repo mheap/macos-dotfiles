@@ -1,6 +1,8 @@
 - name: packages | Install common packages
   pacman: name={{item}} state=installed
   with_items:
+    - alsa-utils
+    - pulseaudio
     - gnupg
     - unzip
     - openssh
@@ -25,6 +27,7 @@
     - z-git
     - dropbox-cli
     - thyme-git
+    - playerctl
 
 - name: packages | Install AUR system packages
   yaourt: name={{item}} state=present
