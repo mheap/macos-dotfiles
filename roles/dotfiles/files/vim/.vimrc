@@ -7,7 +7,7 @@ set encoding=utf-8
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
@@ -45,6 +45,9 @@ let mapleader=","
 """"""""""""""""""""""""""""""
 
 syntax on
+
+" Colours!
+colorscheme base16-flat
 
 " In xterm, set the tab's title to the current file
 set title
