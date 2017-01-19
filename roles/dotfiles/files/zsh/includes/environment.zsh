@@ -4,8 +4,9 @@ setopt RM_STAR_WAIT         # Force the user to wait before `rm *`
 # Named directories
 setopt AUTO_NAME_DIRS
 export oss="$HOME/development/oss"
-export digi="$HOME/development/digime"
-export cookbooks="$HOME/development/digime-cookbooks"
+export d="$HOME/development/digime"
+export dtf="$HOME/development/digi-terraform"
+export dc="$HOME/development/digime-cookbooks"
 export projects="$HOME/development/projects"
 
 # Paths
@@ -13,7 +14,7 @@ export projects="$HOME/development/projects"
 function add_to_path() { [[ -d $1 ]] && export PATH="$1:$PATH"; }
 
 add_to_path "$HOME/development/golang/bin"
-add_to_path "$HOME/.gem/ruby/2.3.0/bin"
+add_to_path "$HOME/.gem/ruby/2.4.0/bin"
 add_to_path "$HOME/.composer/vendor/bin"
 add_to_path "$HOME/.local/bin"
 add_to_path "$HOME/bin"
