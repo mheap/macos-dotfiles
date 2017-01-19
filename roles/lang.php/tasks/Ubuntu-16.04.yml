@@ -5,6 +5,10 @@
     - php-fpm
     - php-mysql
     - php-xml
+    - php-json
+    - php-soap
+    - php-curl
+    - php-gd
   become: true
 
 - name: Is nginx installed?
