@@ -1,6 +1,6 @@
 imports:
   dircolors: 'roles/dotfiles/files/dircolors'
-  base16-shell: '/home/michael/.local/base16-shell'
+  base16-shell: '/home/michael/.config/base16-shell'
 
   zsh-syntax-highlighting: 'roles/dotfiles/files/zsh/plugins/syntax-highlighting'
   zsh-history-substring-search: 'roles/dotfiles/files/zsh/plugins/history-substring-search'

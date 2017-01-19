@@ -47,6 +47,7 @@ let mapleader=","
 syntax on
 
 " Colours!
+let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-flat
 
 " In xterm, set the tab's title to the current file
