@@ -3,9 +3,11 @@ setopt RM_STAR_WAIT         # Force the user to wait before `rm *`
 
 # Named directories
 setopt AUTO_NAME_DIRS
+setopt AUTOCD
 export oss="$HOME/development/oss"
-export digi="$HOME/development/digime"
-export cookbooks="$HOME/development/digime-cookbooks"
+export d="$HOME/development/digime"
+export dc="$HOME/development/digime-cookbooks"
+export dtf="$HOME/development/digime-terraform"
 export projects="$HOME/development/projects"
 
 # Paths
