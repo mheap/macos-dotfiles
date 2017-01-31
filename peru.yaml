@@ -1,5 +1,6 @@
 imports:
   dircolors: 'roles/dotfiles/files/dircolors'
+  base16-shell: '/home/michael/.config/base16-shell'
 
   zsh-syntax-highlighting: 'roles/dotfiles/files/zsh/plugins/syntax-highlighting'
   zsh-history-substring-search: 'roles/dotfiles/files/zsh/plugins/history-substring-search'
@@ -9,6 +10,9 @@ imports:
 git module dircolors:
   url: https://github.com/seebi/dircolors-solarized
   pick: dircolors.ansi-dark
+
+git module base16-shell:
+  url: https://github.com/chriskempson/base16-shell.git
 
 # ZSH syntax highlighting plugin
 git module zsh-syntax-highlighting:

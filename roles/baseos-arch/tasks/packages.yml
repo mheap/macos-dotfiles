@@ -1,6 +1,8 @@
 - name: packages | Install common packages
   pacman: name={{item}} state=installed
   with_items:
+    - alsa-utils
+    - pulseaudio
     - gnupg
     - unzip
     - openssh
@@ -24,6 +26,8 @@
   with_items:
     - z-git
     - dropbox-cli
+    - thyme-git
+    - playerctl
 
 - name: packages | Install AUR system packages
   yaourt: name={{item}} state=present
@@ -45,6 +49,8 @@
 - name: packages | Install developer packages
   pacman: name={{item}} state=installed
   with_items:
+    - autoconf
+    - automake
     - cmake
     - git
     - strace
@@ -62,6 +68,7 @@
   pacman: name={{item}} state=installed
   with_items:
     - docker
+    - docker-compose
     - vagrant
     - virtualbox
     - linux-headers # For Virtualbox

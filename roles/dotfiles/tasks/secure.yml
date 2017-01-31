@@ -1,11 +1,10 @@
 ---
 
-- name: Create lockbox dir
+- name: secure | Create lockbox dir
   file: dest={{lockbox_location}} state=directory
 
-- name: Create symlinks
+- name: secure | Create symlinks
   file: src={{lockbox_location}}/private-keys/{{ item.src }} dest={{ item.dest }} state=link owner=michael mode=0600 force=yes
   with_items:
   - { src: 'ssh', dest: '~/.ssh' }
   - { src: 'gnupg', dest: '~/.gnupg' }
-  - { src: 'chef', dest: '~/.chef' }

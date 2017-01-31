@@ -1,0 +1,7 @@
+---
+- name: Install Node
+  pacman: name={{item}} state=latest
+  with_items:
+    - nodejs
+    - npm
+  become: true

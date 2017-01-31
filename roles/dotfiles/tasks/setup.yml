@@ -8,6 +8,8 @@
     - ~/development/oss
     - ~/development/digime
     - ~/development/digime-cookbooks
+    - ~/development/digime-terraform
+    - ~/development/projects
 
 - name: dotfiles | Create ~/.local/bin
   file: path=~/.local/bin state=directory

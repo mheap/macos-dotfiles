@@ -1,11 +1,13 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+set encoding=utf-8
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
@@ -17,6 +19,7 @@ Plugin 'airblade/vim-rooter'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'hashivim/vim-terraform'
 
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'SirVer/ultisnips'
@@ -42,6 +45,10 @@ let mapleader=","
 """"""""""""""""""""""""""""""
 
 syntax on
+
+" Colours!
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-flat
 
 " In xterm, set the tab's title to the current file
 set title

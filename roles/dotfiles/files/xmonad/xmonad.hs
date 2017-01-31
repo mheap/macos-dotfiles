@@ -114,7 +114,7 @@ drawerLayout prop layout = renamed [CutWordsLeft 2] $ myDrawer prop `onRight` la
 
 -- For now, just avoidStruts (Show top + Bottom bars)
 -- myLayout = avoidStruts $ layoutHook defaultConfig
-myLayout = standardLayout ||| ThreeCol 1 (3/100) (1/2) ||| fullLayout ||| gridLayout ||| mosaic 2 [3,2] ||| vAccordionLayout ||| hAccordionLayout
+myLayout = avoidStruts $ standardLayout ||| ThreeCol 1 (3/100) (1/2) ||| fullLayout ||| gridLayout ||| mosaic 2 [3,2] ||| vAccordionLayout ||| hAccordionLayout
 
 --
 -- Set up any custom config
@@ -149,7 +149,7 @@ myBindings =
     , ("<XF86Launch8>"  , spawn "playerctl previous")
     , ("<XF86HomePage>"  , spawn "bash /home/michael/.screenlayout/work-desk.sh")
     , ("<XF86Mail>"  , spawn "bash /home/michael/.screenlayout/laptop-only.sh")
-
+    , ("<XF86Search>"  , spawn "bash /home/michael/screenshots/screenshot.sh")
     ]
     -- Make F-keys switch workspaces too
     ++
@@ -175,6 +175,8 @@ myStartupHook = setWMName "LG3D"
 main = do
 
     -- Run xmobar and set printers
+    titleBar <- spawnPipe "xmobar ~/.xmonad/xmobar/top.xmobarrc"
+    let ttlPP = titlePP { ppOutput = hPutStrLn titleBar }
     workspaceBar <- spawnPipe "xmobar ~/.xmonad/xmobar/bottom-right.xmobarrc"
     let wsPP = workspacePP { ppOutput = hPutStrLn workspaceBar }
     layoutBar <- spawnPipe "xmobar ~/.xmonad/xmobar/bottom-left.xmobarrc"
@@ -189,10 +191,11 @@ main = do
         -- Set up xmobar
         , logHook = workspaceNamesPP wsPP >>= -- Display workspace names
                         dynamicLogWithPP >>
+                        dynamicLogWithPP ttlPP >>
                         dynamicLogWithPP lytPP >>
                         logHook myConfig
         , startupHook = myStartupHook
-        , handleEventHook = ewmhDesktopsEventHook
+        , handleEventHook = ewmhDesktopsEventHook $ docksEventHook
 
         -- Set up additional bindings
         } `additionalKeysP` myBindings

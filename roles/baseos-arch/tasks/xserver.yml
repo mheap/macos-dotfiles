@@ -8,6 +8,9 @@
     - xorg-xdpyinfo
     - xorg-xrdb
     - arandr
+    - wmctrl
+    - xorg-xwininfo
+    - xdotool
   become: true
 
 
