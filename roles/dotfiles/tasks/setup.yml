@@ -9,6 +9,7 @@
     - ~/development/digime
     - ~/development/digime-terraform
     - ~/development/digime-cookbooks
+    - ~/development/digime-terraform
     - ~/development/projects
 
 - name: dotfiles | Create ~/.local/bin
