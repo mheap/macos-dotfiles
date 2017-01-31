@@ -55,6 +55,7 @@
     - git
     - strace
     - rsync
+    - dnsutils
   become: true
 
 - name: packages | Install developer helper packages

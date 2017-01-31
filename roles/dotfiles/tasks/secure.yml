@@ -1,5 +1,6 @@
 ---
 
+
 - name: secure | Create lockbox dir
   file: dest={{lockbox_location}} state=directory
 

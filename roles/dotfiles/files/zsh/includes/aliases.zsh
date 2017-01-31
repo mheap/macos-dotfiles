@@ -36,7 +36,9 @@ unlock() {
 alias ls='$LS_COM --color'
 
 # Other useful aliases
+if [[ "`uname`" == "Linux" ]]; then
 alias open='xdg-open'
+fi
 
 # VPN management
 v(){
@@ -63,10 +65,19 @@ vo() {
     v openstack
 }
 
+# Aliases
 myip() {
     dig +short myip.opendns.com @resolver1.opendns.com
 }
 
+t() {
+    cat ~/Dropbox/todo
+}
+
+et() {
+    vim ~/Dropbox/todo
+}
+
 ts-mocha() {
-rm -rf coverage && node_modules/.bin/ts-node ./node_modules/istanbul/lib/cli.js cover -ext .ts node_modules/mocha/bin/_mocha "$@"
+    rm -rf coverage && node_modules/.bin/ts-node ./node_modules/istanbul/lib/cli.js cover -ext .ts node_modules/mocha/bin/_mocha "$@"
 }
