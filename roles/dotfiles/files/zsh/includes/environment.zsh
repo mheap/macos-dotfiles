@@ -5,7 +5,7 @@ setopt RM_STAR_WAIT         # Force the user to wait before `rm *`
 setopt AUTO_NAME_DIRS
 export oss="$HOME/development/oss"
 export d="$HOME/development/digime"
-export dtf="$HOME/development/digi-terraform"
+export dtf="$HOME/development/digime-terraform"
 export dc="$HOME/development/digime-cookbooks"
 export projects="$HOME/development/projects"
 
