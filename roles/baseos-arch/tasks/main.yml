@@ -32,23 +32,11 @@
 - include: xserver.yml
   tags: [system, xserver]
 
+- include: fontconfig.yml
+  tags: [fontconfig]
+
 - include: zsh.yml
   tags: [system, zsh]
-
-  #- include: lang-php.yml
-  #  tags: [lang, development, php]
-  #
-  #- include: lang-node.yml
-  #  tags: [lang, development, node]
-  #
-  #- include: lang-go.yml
-  #  tags: [lang, development, go]
-  #
-  #- include: lang-python.yml
-  #  tags: [lang, development, python]
-  #
-  #- include: lang-mysql.yml
-  #  tags: [lang, development, mysql]
 
 - include: tool-chefdk.yml
   tags: [configman, development, chef]

@@ -1,0 +1,17 @@
+- name: fontconfig | Install fonts
+  yaourt: name={{item}} state=present
+  with_items:
+    - fonts-meta-base
+    - fonts-meta-extended-lt
+    - slack-desktop
+    - typora
+
+- name: fontconfig | Create symlinks
+  file: src={{item.src}} dest={{item.dest}} state=link
+  with_items:
+    - {"src":"/etc/fonts/conf.avail/11-lcdfilter-default.conf", "dest":"/etc/fonts/conf.d/11-lcdfilter-default.conf"}
+    - {"src":"/etc/fonts/conf.avail/10-sub-pixel-rgb.conf", "dest":"/etc/fonts/conf.d/10-sub-pixel-rgb.conf"}
+    - {"src":"/etc/fonts/conf.avail/10-hinting-slight.conf", "dest":"/etc/fonts/conf.d/10-hinting-slight.conf"}
+    - {"src":"/etc/fonts/conf.avail/30-infinality-aliases.conf", "dest":"/etc/fonts/conf.d/30-infinality-aliases.conf"}
+  become: true
+

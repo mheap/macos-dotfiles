@@ -147,6 +147,7 @@ myBindings =
     , ("<XF86AudioPlay>"  , spawn "playerctl play-pause")
     , ("<XF86Launch9>"  , spawn "playerctl next")
     , ("<XF86Launch8>"  , spawn "playerctl previous")
+    , ("<XF86Launch7>"  , sendMessage ToggleStruts)
     , ("<XF86HomePage>"  , spawn "bash /home/michael/.screenlayout/work-desk.sh")
     , ("<XF86Mail>"  , spawn "bash /home/michael/.screenlayout/laptop-only.sh")
     , ("<XF86Search>"  , spawn "bash /home/michael/screenshots/screenshot.sh")
@@ -195,7 +196,7 @@ main = do
                         dynamicLogWithPP lytPP >>
                         logHook myConfig
         , startupHook = myStartupHook
-        , handleEventHook = ewmhDesktopsEventHook $ docksEventHook
+        , handleEventHook = docksEventHook
 
         -- Set up additional bindings
         } `additionalKeysP` myBindings
