@@ -1,10 +1,20 @@
-- name: fontconfig | Install fonts
+- name: fontconfig | Install AUR fonts
   yaourt: name={{item}} state=present
   with_items:
     - fonts-meta-base
     - fonts-meta-extended-lt
-    - slack-desktop
-    - typora
+
+- name: fontconfig | Copy package fonts
+  copy: src="fonts/{{item}}" dest="/tmp/{{item}}"
+  with_items:
+    - t1-cursor-ib-1.0.4-2-any.pkg.tar.xz
+    - ttf-gelasio-ib-1.00-7-any.pkg.tar.xz
+
+- name: fontconfig | Install package fonts
+  pacman: name="/tmp/{{item}}" state=present
+  with_items:
+    - t1-cursor-ib-1.0.4-2-any.pkg.tar.xz
+    - ttf-gelasio-ib-1.00-7-any.pkg.tar.xz
 
 - name: fontconfig | Create symlinks
   file: src={{item.src}} dest={{item.dest}} state=link
