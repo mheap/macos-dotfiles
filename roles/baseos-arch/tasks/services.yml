@@ -7,6 +7,7 @@
 - name: services | Start netctl-auto@{{wireless_device}} automatically
   service: name="netctl-auto@{{wireless_device}}.service" state=started enabled=yes
   become: true
+  when: not is_digime_laptop
 
 - name: services | Start user services
   systemd: name="{{item}}.service" state=started enabled=yes user=yes daemon_reload=yes

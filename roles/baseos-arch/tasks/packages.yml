@@ -55,7 +55,6 @@
     - git
     - strace
     - rsync
-    - dnsutils
   become: true
 
 - name: packages | Install developer helper packages
@@ -69,7 +68,6 @@
   pacman: name={{item}} state=installed
   with_items:
     - docker
-    - docker-compose
     - vagrant
     - virtualbox
     - linux-headers # For Virtualbox
