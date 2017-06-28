@@ -6,10 +6,7 @@
   file: path={{item}} state=directory
   with_items:
     - ~/development/oss
-    - ~/development/digime
-    - ~/development/digime-terraform
-    - ~/development/digime-cookbooks
-    - ~/development/digime-terraform
+    - ~/development/nexmo
     - ~/development/projects
 
 - name: dotfiles | Create ~/.local/bin
