@@ -1,0 +1,18 @@
+---
+- name: Test
+  debug: msg="Hello"
+- name: Create monica DB
+  mysql_db:
+    name: monica
+    state: present
+  become: true
+- name: Create monica DB user
+  mysql_user:
+    name: monica
+    password: "fc7908891db087a1820592e13d7850ad"
+    priv: 'monica.*:ALL'
+    state: present
+  become: true
+    #- name: Download Project
+    #  git: repo="https://github.com/monicahq/monica.git" dest="/var/www/monica" update=no
+    #  become: true

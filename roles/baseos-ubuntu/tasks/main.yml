@@ -3,5 +3,6 @@
 - name: Install required utilities
   apt: name={{item}} state=installed
   with_items:
+    - sendmail
     - zip
   become: true
