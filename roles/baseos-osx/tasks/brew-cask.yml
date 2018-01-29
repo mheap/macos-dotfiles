@@ -16,6 +16,11 @@
     - dropbox
     #- fantastical
     - google-chrome
+    - qlcolorcode
+    - qlmarkdown
+    - quicklook-json
+    - quicklook-csv
+    - qlstephen
     - rocket
     - screenflow
     - slack
