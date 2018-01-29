@@ -16,7 +16,8 @@
     - dropbox
     #- fantastical
     - google-chrome
-    #- screenflow # Disabled, version too new
+    - rocket
+    - screenflow
     - slack
     - spotify
     - steam
