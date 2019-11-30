@@ -1,6 +1,7 @@
 [user]
   name = Michael Heap
   email = m@michaelheap.com
+  signingkey = 80D4F1F4A7C23CD7
 
 [alias]
   co = checkout
