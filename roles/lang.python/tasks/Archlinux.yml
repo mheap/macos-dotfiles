@@ -1,6 +1,0 @@
----
-- name: Install system pip packages
-  pip: name={{item}} state=latest
-  with_items:
-    - virtualenv
-  become: true

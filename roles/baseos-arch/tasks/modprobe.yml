@@ -1,9 +1,0 @@
-- name: modprobe | Blacklist PC Beep
-  copy: content="blacklist pcspkr" dest=/etc/modprobe.d/nobeep.conf
-  become: true
-
-  #- name: modprobe | Virtualbox
-  #  copy: content="vboxdrv\nvbocnetadp\nvboxnetflt\nvboxpci" dest=/etc/modprobe.d/virtualbox.conf
-  #  become: true
-
-

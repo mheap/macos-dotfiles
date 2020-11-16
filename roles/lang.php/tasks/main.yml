@@ -1,9 +1,0 @@
----
-# tasks file for lang.php
-- include: "{{ansible_distribution}}-{{ansible_distribution_version}}.yml"
-  when: ansible_distribution_version != "NA"
-
-- include: "{{ansible_distribution}}.yml"
-  when: ansible_distribution_version == "NA"
-
-

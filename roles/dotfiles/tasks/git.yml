@@ -1,6 +1,0 @@
----
-- name: git | Create .gitconfig
-  copy: src=git/.gitconfig dest=~/.gitconfig
-
-- name: git | Create .gitignore
-  copy: src=git/.gitignore dest=~/.gitignore

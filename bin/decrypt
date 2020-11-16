@@ -1,7 +1,0 @@
-VARS_FILES=$(find . -wholename "**/defaults/*.yml.gpg")
-PLAYBOOK_FILES=$(find . -name "playbook-*.yml.gpg")
-
-for i in $VARS_FILES $PLAYBOOK_FILES; do
-    echo "Decrypting: $i"
-    gpg --yes --output ${i%.gpg} --decrypt $i
-done

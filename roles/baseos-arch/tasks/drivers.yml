@@ -1,7 +1,0 @@
-- name: drivers | Drivers
-  pacman: name={{item}} state=installed
-  with_items:
-    - xf86-input-synaptics
-  become: true
-
-

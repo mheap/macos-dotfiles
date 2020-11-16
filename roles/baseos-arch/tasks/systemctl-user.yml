@@ -1,9 +1,0 @@
----
-- name: systemctl-user | Create user unit dir
-  file: path=~/.config/systemd/user/ state=directory
-
-- name: systemctl-user | Add user units
-  copy: src=unit/{{item}}.service dest=~/.config/systemd/user/{{item}}.service
-  with_items:
-    - ssh-agent
-    - devmon

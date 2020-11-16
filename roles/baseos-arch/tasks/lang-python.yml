@@ -1,6 +1,0 @@
----
-- name: lang-go | Install Python
-  pacman: name={{item}} state=installed
-  with_items:
-    - python-pip
-    - python2-pip

@@ -1,5 +1,0 @@
----
-- name: lang-go | Install Go
-  pacman: name={{item}} state=installed
-  with_items:
-    - go

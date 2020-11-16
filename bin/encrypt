@@ -1,7 +1,0 @@
-VARS_FILES=$(find . -wholename "**/defaults/*.yml")
-PLAYBOOK_FILES=$(find . -name "playbook-*.yml")
-
-for i in $VARS_FILES $PLAYBOOK_FILES; do
-    echo "Encrypting: $i"
-    gpg --yes --output $i.gpg --encrypt --recipient m@michaelheap.com $i
-done
