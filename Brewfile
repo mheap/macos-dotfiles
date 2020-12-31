@@ -48,6 +48,7 @@ cask 'qlcolorcode'
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
+cask 'WebPQuickLook'
 
 # Fonts
 cask 'font-lato'
